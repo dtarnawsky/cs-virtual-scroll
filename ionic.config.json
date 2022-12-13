@@ -1,0 +1,7 @@
+{
+  "name": "cs-virtual-scroll",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
