@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar autofocus [debounce]="1000" (ionChange)="search($event)" placeholder="Search for Regions"></ion-searchbar>
+  <ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+  <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350">
+    <ion-list>
+      <ion-item *cdkVirtualFor="let region of regions; trackBy: trackByRegions">{{region.nome}}</ion-item>
+    </ion-list>
+  </cdk-virtual-scroll-viewport>
+</ion-content>
